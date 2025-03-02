@@ -1,0 +1,34 @@
+{
+  "name": "local-runes",
+  "version": "0.0.1",
+  "description": "A Svelte wrapper for local-first data storage powered by TinyBase",
+  "type": "module",
+  "author": "Nick Gideo",
+  "license": "MIT",
+  "keywords": [
+    "svelte",
+    "tinybase",
+    "local-first",
+    "reactive",
+    "runes",
+    "svelte5"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourname/local-runes.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "svelte": "./index.js",
+      "default": "./index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0",
+    "tinybase": "^4.0.0"
+  }
+} 

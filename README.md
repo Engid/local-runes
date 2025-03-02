@@ -67,42 +67,36 @@ npm install local-runes
 
 All reactive getters automatically set up and clean up subscriptions when components mount/unmount.
 
-## Packaging for NPM
+## Development
 
-To prepare this library for npm:
+This repository contains:
+- The library code in `src/lib/`
+- Example usage in the SvelteKit routes 
+- Unit tests for the wrapper functionality
 
-1. Ensure `package.json` has the correct configuration:
-
-```json
-{
-  "name": "local-runes",
-  "version": "0.0.1",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
-  "files": ["dist"],
-  "peerDependencies": {
-    "svelte": "^5.0.0",
-    "tinybase": "^4.0.0"
-  }
-}
-```
-
-2. Build the package using:
+### Working on the library
 
 ```bash
+# Install dependencies
+npm install
+
+# Run the development server with example app
+npm run dev
+
+# Run tests
+npm run test
+```
+
+### Building for production
+
+The package is configured to only include the actual library code when published to npm, excluding the example app routes.
+
+```bash
+# Build the package
 npm run build
-```
 
-3. Publish to npm:
-
-```bash
-npm publish
+# Preview the package contents
+npx publint
 ```
 
 ## Contributing

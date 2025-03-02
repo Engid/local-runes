@@ -15,7 +15,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/yourname/local-runes.git"
+		"url": "git+https://github.com/yourname/local-runes.git"
 	},
 	"scripts": {
 		"dev": "vite dev",
@@ -27,14 +27,11 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"package": "svelte-package && publint",
+		"package": "svelte-package && node scripts/clean-package.js && publint",
 		"prepublishOnly": "npm run package"
 	},
 	"files": [
 		"dist"
-	],
-	"sideEffects": [
-		"**/*.css"
 	],
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -44,6 +41,9 @@
 			"svelte": "./dist/index.js",
 			"default": "./dist/index.js"
 		}
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"peerDependencies": {
 		"svelte": "^5.0.0",
@@ -70,6 +70,5 @@
 		"vitest": "^1.1.0"
 	},
 	"dependencies": {
-		"tinybase": "^5.4.8"
 	}
 }
